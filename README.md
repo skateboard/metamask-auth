@@ -12,7 +12,7 @@ git clone https://github.com/skateboard/metamask-auth.git
 ```
 
 # Pseudo code
-You will need to code some things your self like getting user information and checking the signed message using a contract.
+You will need to code some things your self like getting user information and checking the signed message using a contract. [Example](https://stackoverflow.com/questions/71188471/how-do-you-sign-a-message-in-node-and-then-verify-that-signature-came-from-an-a)
 
 # Directory
 - [API](api/)
