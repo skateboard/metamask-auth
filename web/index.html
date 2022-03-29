@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>MetaMask Auth</title>
+    <meta charset="utf-8">
+  </head>
+  <body>    
+    <li>Welcome to MetaMask Auth</li>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/web3.min.js"></script>
+    <script type="text/javascript" src="js/sign.js"></script>
+
+    <script>
+        window.ethereum.enable();
+
+        if (typeof web3 != 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+
+        const msgParams = [
+            {
+                type: 'string',      
+                name: 'Message',     
+                value: 'i own this product' 
+            }
+        ] 
+
+        web3.eth.getCoinbase()
+        .then(account => {
+          signMsg(msgParams, account, urlParams.get('state'));
+        });
+    </script>
+  </body>
+</html>
